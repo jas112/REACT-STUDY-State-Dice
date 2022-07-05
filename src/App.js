@@ -5,6 +5,7 @@ import Button from './components/button/Button';
 import BrokenClick from './components/brokenClick/BrokenClick';
 import BrokenClick2 from './components/brokenClick/BrokenClick2';
 import Rando from './components/rando/Rando';
+import StateClicker from './components/stateClicker/StateClicker';
 import './App.css';
 
 class App extends Component{
@@ -16,7 +17,8 @@ class App extends Component{
             <Rando maxNum={ 7 } /> */}
             {/* <Button/> */}
             {/* <BrokenClick/> */}
-            <BrokenClick2/>
+            {/* <BrokenClick2/> */}
+            <StateClicker/>
         </div>
     )
   }
