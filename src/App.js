@@ -3,7 +3,9 @@ import Game from './components/game/Game';
 import Game2 from './components/game/Game2';
 import Button from './components/button/Button';
 import BrokenClick from './components/brokenClick/BrokenClick';
+import BrokenClick2 from './components/brokenClick/BrokenClick2';
 import Rando from './components/rando/Rando';
+import './App.css';
 
 class App extends Component{
   render(){
@@ -13,7 +15,8 @@ class App extends Component{
             <Game2/>
             <Rando maxNum={ 7 } /> */}
             {/* <Button/> */}
-            <BrokenClick/>
+            {/* <BrokenClick/> */}
+            <BrokenClick2/>
         </div>
     )
   }
