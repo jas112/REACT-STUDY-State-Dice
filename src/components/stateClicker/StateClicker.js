@@ -19,7 +19,7 @@ class StateClicker extends Component {
 
         newNum += 1;
 
-        if(newNum == this.state.limit){
+        if(newNum === this.state.limit){
             this.setState({limitReached: true});
         }
 
@@ -31,7 +31,7 @@ class StateClicker extends Component {
 
         let randomNumber = Math.floor(Math.random() * 10) + 1;
 
-        if(randomNumber == this.state.limit){
+        if(randomNumber === this.state.limit){
             this.setState({limitReached: true});
         }else{
             this.setState({limitReached: false});
