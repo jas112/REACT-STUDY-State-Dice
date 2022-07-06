@@ -5,7 +5,7 @@ import './Die.css';
 
   render() {
 
-    let dieDetails = `Die fas fa-dice-${this.props.face} ${this.props.isRolling ? 'isRolling' : ''}`;
+    let dieDetails = `Die fas fa-dice-${this.props.face} ${this.props.isRolling ? 'Die-rolling' : ''}`;
 
     return (
       <i className={dieDetails}></i>

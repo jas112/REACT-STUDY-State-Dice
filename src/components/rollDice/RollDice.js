@@ -28,7 +28,8 @@ rollDice(e){
     this.setState({die1: d1});
     this.setState({die2: d2});
     this.setState({isRolling: true});
-    setInterval(() => {
+
+    setTimeout(() => {
         this.setState({isRolling: false});
     }, 2000);
 }
@@ -40,7 +41,9 @@ rollDice(e){
             <Die face={this.state.die1} isRolling={this.state.isRolling}/>
             <Die face={this.state.die2} isRolling={this.state.isRolling}/>
         </div>
-        <button onClick={this.rollDice}>{this.state.isRolling ? 'Rolling...' : 'Roll Dice!'}</button>
+        <button onClick={this.rollDice} disabled={this.state.isRolling}>
+            {this.state.isRolling ? 'Rolling...' : 'Roll Dice!'}
+        </button>
       </div>
     )
   }
