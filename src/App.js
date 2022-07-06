@@ -7,6 +7,7 @@ import React, {Component} from 'react';
 // import Rando from './components/rando/Rando';
 // import StateClicker from './components/stateClicker/StateClicker';
 import RollDice from './components/rollDice/RollDice';
+import './App.css';
 
 class App extends Component{
   render(){
