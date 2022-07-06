@@ -4,14 +4,18 @@ import './RollDice.css';
 
 class RollDice extends Component {
 
-static defaultProps = {faces: ["one", "two", "three", "four", "five", "six"]};
+static defaultProps = {
+  faces: ["one", "two", "three", "four", "five", "six"],
+  faceValues: {"one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6}
+};
 
 constructor(props){
     super(props);
     this.state = {
         die1: "one",
         die2: "one",
-        isRolling: false
+        isRolling: false,
+        isWinner: false
     };
     this.rollDice = this.rollDice.bind(this);
 }
@@ -23,20 +27,31 @@ generateRandomFaceValue(){
 }
 
 rollDice(e){
-    let d1 = this.generateRandomFaceValue();
-    let d2 = this.generateRandomFaceValue();
-    this.setState({die1: d1});
-    this.setState({die2: d2});
-    this.setState({isRolling: true});
+
+    this.setState({isWinner: false})
+
+    const d1 = this.generateRandomFaceValue();
+    const d2 = this.generateRandomFaceValue();
+    const dieTotal = this.props.faceValues[d1] + this.props.faceValues[d2];
+    const winnerBool = dieTotal == 7;
+    console.log(`${d1} ${d2} ${dieTotal} ${winnerBool}`);
+    console.log(`${this.props.faceValues[d1]} ${this.props.faceValues[d2]}`);
+    // const winnerBool = (this.props.faceValues[d1] + this.props.faceValues[d2]) === 7;
+    // const winnerBool = false;
+    // this.setState({die1: d1});
+    // this.setState({die2: d2});
+    // this.setState({isRolling: true});
+    this.setState({die1: d1, die2: d2, isRolling: true, isWinner: winnerBool});
 
     setTimeout(() => {
         this.setState({isRolling: false});
-    }, 2000);
+    }, 1000);
 }
 
   render() {
     return (
       <div className='RollDice'>
+        <h1>{this.state.isWinner ? "You Win!!!" : "Let's Roll"}</h1>
         <div className='RollDice-container'>
             <Die face={this.state.die1} isRolling={this.state.isRolling}/>
             <Die face={this.state.die2} isRolling={this.state.isRolling}/>
